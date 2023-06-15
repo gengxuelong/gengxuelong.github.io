@@ -2,7 +2,7 @@
 
 document.getElementById("chat-gpt-input").focus();
 async function fetchChatGPTResponse(inputText) {
-  const api_key = "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"
+  const api_key = ""
   // const api_url = "https://api.openai.com/v1/completions";
   const api_url = "https://api.openai.com/v1/chat/completions";
   const prompt = `请回答以下问题：\n问题：${inputText}\n回答：`;
