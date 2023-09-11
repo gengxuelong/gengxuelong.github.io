@@ -1,191 +1,227 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta charset="UTF-8">
+    <title>深度学习(ASR)</title>
+    <link rel="shortcut icon" href="_media/favicon.ico" type="image/x-icon" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 主题 -->
+    <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css">
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/dark.css">-->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Icefall &mdash; icefall 0.1 documentation</title>
-      <link rel="stylesheet" href="./_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="./_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="./_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="./" id="documentation_options" src="./_static/documentation_options.js"></script>
-        <script src="./_static/jquery.js"></script>
-        <script src="./_static/underscore.js"></script>
-        <script src="./_static/doctools.js"></script>
-    <script src="./_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="./genindex.html" />
-    <link rel="search" title="Search" href="./search.html" />
-    <link rel="next" title="Installation" href="./installation/index.html" /> 
-</head>
+    <meta name="google-site-verification" content="6t0LoIeFksrjF4c9sqUEsVXiQNxLp2hgoqo0KryT-sE" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
+    <meta name="description" content="A magical documentation generator.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" title="vue">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" title="dark" disabled>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css" title="buble" disabled>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css" title="pure" disabled>
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="./#" class="icon icon-home"> icefall
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./installation/index.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="./faqs.html">Frequently Asked Questions (FAQs)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="./model-export/index.html">Model export</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./recipes/index.html">Recipes</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./contributing/index.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="./huggingface/index.html">Huggingface</a></li>
-</ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./decoding-with-langugage-models/index.html">Decoding with language models</a></li>
-</ul>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-codefund/index.js"></script>
 
-        </div>
-      </div>
-    </nav>
+    <!--   <script src="https:https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" > </script> -->
+    <!--   <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+     -->
+    <!--   <script type="text/javascript"
+        src="https:https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script> -->
+    <!-- 放大图片 -->
+    <script src="https://unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="./#">icefall</a>
-      </nav>
+    <!-- gittalk -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <!-- 代码高亮 -->
+    <script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
+    <!-- md5加密 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.11.0/js/md5.min.js"></script>
 
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="./#" class="icon icon-home"></a> &raquo;</li>
-      <li>Icefall</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/k2-fsa/icefall/blob/master/docs/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="icefall">
-<h1>Icefall<a class="headerlink" href="./#icefall" title="Permalink to this headline"></a></h1>
-<a class="reference external image-reference" href="https://github.com/k2-fsa/icefall"><img alt="icefall logo" class="align-center" src="./_images/logo.png" style="width: 168px;" /></a>
-<p>Documentation for <a class="reference external" href="https://github.com/k2-fsa/icefall">icefall</a>, containing
-speech recognition recipes using <a class="reference external" href="https://github.com/k2-fsa/k2">k2</a>.</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./installation/index.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#install-cuda-toolkit-and-cudnn">(0) Install CUDA toolkit and cuDNN</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#install-torch-and-torchaudio">(1) Install torch and torchaudio</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#install-k2">(2) Install k2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#install-lhotse">(3) Install lhotse</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#download-icefall">(4) Download icefall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#installation-example">Installation example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#test-your-installation">Test Your Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./installation/index.html#youtube-video">YouTube Video</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="./faqs.html">Frequently Asked Questions (FAQs)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./faqs.html#oserror-libtorch-hip-so-cannot-open-shared-object-file-no-such-file-or-directory">OSError: libtorch_hip.so: cannot open shared object file: no such file or directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./faqs.html#attributeerror-module-distutils-has-no-attribute-version">AttributeError: module ‘distutils’ has no attribute ‘version’</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./faqs.html#importerror-libpython3-10-so-1-0-cannot-open-shared-object-file-no-such-file-or-directory">ImportError: libpython3.10.so.1.0: cannot open shared object file: No such file or directory</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="./model-export/index.html">Model export</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./model-export/export-model-state-dict.html">Export model.state_dict()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./model-export/export-with-torch-jit-trace.html">Export model with torch.jit.trace()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./model-export/export-with-torch-jit-script.html">Export model with torch.jit.script()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./model-export/export-onnx.html">Export to ONNX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./model-export/export-ncnn.html">Export to ncnn</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./recipes/index.html">Recipes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./recipes/Non-streaming-ASR/index.html">Non Streaming ASR</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Non-streaming-ASR/aishell/index.html">aishell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Non-streaming-ASR/librispeech/index.html">LibriSpeech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Non-streaming-ASR/timit/index.html">TIMIT</a></li>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Non-streaming-ASR/yesno/index.html">YesNo</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="./recipes/Streaming-ASR/index.html">Streaming ASR</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Streaming-ASR/introduction.html">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="./recipes/Streaming-ASR/librispeech/index.html">LibriSpeech</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./contributing/index.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./contributing/doc.html">Contributing to Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./contributing/code-style.html">Follow the code style</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./contributing/how-to-create-a-recipe.html">How to create a recipe</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="./huggingface/index.html">Huggingface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./huggingface/pretrained-models.html">Pre-trained models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./huggingface/spaces.html">Huggingface spaces</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="./decoding-with-langugage-models/index.html">Decoding with language models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="./decoding-with-langugage-models/shallow-fusion.html">Shallow fusion for Transducer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./decoding-with-langugage-models/LODR.html">LODR for RNN Transducer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="./decoding-with-langugage-models/rescoring.html">LM rescoring for Transducer</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"></script>
+    <!-- <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script> -->
+    
+    <!-- new js -->
+<!--     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/docsify/lib/themes/vue.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css">
+    <script src="https:https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"></script> -->
+
+    <script>
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            }
+        );
+    </script>
 
 
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="./installation/index.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
 
-  <hr/>
 
-  <div role="contentinfo">
-    <p>&#169; Copyright 2021, icefall development team.</p>
-  </div>
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
 
-</footer>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+    <!-- <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+        },
+      displayAlign : "left",
+      TeX: {
+                  equationNumbers: {
+                      autoNumber: "all",
+                      useLabelIds: true
+                  }
+              },
+              "HTML-CSS": {
+                  linebreaks: {
+                      automatic: true
+                  },
+                  scale: 100,
+                  styles: {
+                    ".MathJax_Display": {
+                      "text-align": "left",
+                      "width" : "auto",
+                      "margin": "10px 0px 10px 0px !important",
+                      "background-color": "#f5f5f5 !important",
+                      "border-radius": "3px !important",
+                      border:  "1px solid #ccc !important",
+                      padding: "5px 5px 5px 5px !important"
+                    },
+                    ".MathJax": {
+                      "background-color": "#f5f5f5 !important",
+                      padding: "2px 2px 2px 2px !important"
+                    }
+                  }
+              },
+              SVG: {
+                  linebreaks: {
+                      automatic: true
+                  }
+              }
       });
-  </script> 
+    </script> -->
 
+
+
+</head>
+<body>
+  <div id="app">加载中...</div>
+  <script>
+    window.$docsify = {
+      //search: 'auto', // 默认值
+        search: {
+            paths: 'auto',
+            placeholder: '搜索一下...',
+      },
+      loadSidebar: true,
+      // el: '#main',
+      name: '语音识别',
+      // logo: '_media/icon.svg',
+      repo: 'https://github.com/DataXujing/ASR-paper',
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      subMaxLevel: 3,
+   
+      loadNavbar: true,
+
+      coverpage: true,
+      auto2top: true,//切换页面是否自动跳转到顶部
+
+
+      // footer
+      plugins: [
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer align="center">',
+            '<span><a href="https://github.com/DataXujing">徐静</a> &copy;2020-2099</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;',
+            '<span>美迪康数字工程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目基于 <a href="https://github.com/docsifyjs/docsify" target="_blank">&nbsp;docsify</a>.</span>',
+            '</footer>'
+          ].join('')
+
+          hook.afterEach(function (html) {
+            return html + footer
+          })
+        }
+      ]
+
+
+    }
+  </script>
+  <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!-- <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script> -->
+  <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+
+
+
+
+<script src="https://unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<!-- <div id="gitalk-container"></div>  -->
+<!-- <script>
+   const gitalk = new Gitalk({
+    clientID: '1870d4007fcc20b1902a',
+    clientSecret: '441d80e33a119a730ce41b4778e284ff49904314',
+    repo: 'NLP-paper',
+    owner: 'DataXujing',
+    admin: ['DataXujing'],
+    // facebook-like distraction free mode
+    id: md5(location.pathname),
+    distractionFreeMode: false
+  })
+
+  // gitalk.render('gitalk-container')
+</script> -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true,
+      skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"]
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+
+  <!-- new js -->
+  <!-- <script src="docsify.js"></script> -->
+  <script src="https://unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code"></script>
+  <script src="https://unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
+  <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+<!--  <script src="docsify.js"></script>
+  <script src="https://unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <script src="https://unpkg.com/docsify-copy-code"></script>
+  <script src="https://unpkg.com/prismjs/components/prism-bash.js"></script>
+  <script src="https://unpkg.com/prismjs/components/prism-python.js"></script>
+  <script src="https://unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+ -->
+  <!-- <script type="text/javascript" src="http://lib.baomitu.com/mathjax/2.7.7/MathJax.js"></script>  -->
+
+
+
+  <!-- 代码高亮 -->
 </body>
 </html>
